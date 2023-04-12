@@ -1,5 +1,23 @@
+.cell{
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+  box-shadow: 0 0 0 2px;
+  line-height: 155px;
+  font-size: 190px;
+  cursor: pointer;
+}
+#gameContainer{
+  font-family: cursive;
+  text-align: center;
+}
 
-
+#cellContainer{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 600px;
+  margin: auto;
+}
 
 
 
