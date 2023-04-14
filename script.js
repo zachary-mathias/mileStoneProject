@@ -15,7 +15,9 @@ let options = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer = "X";
 let running = false;
 
+
 initializeGame();
+
 
 function initializeGame(){
     cells.forEach(cell => cell.addEventListener("click", cellClicked));
@@ -54,14 +56,16 @@ function checkWinner(){
             continue;
         }
         if(cellA == cellB && cellB == cellC){
-            roundWon = true;
+            roundWon = true
             break;
         }
     }
 
     if(roundWon){
         statusText.textContent = `${currentPlayer} wins!`;
+        document.querySelectorAll(".cell").forEach(cell => cell.style.opacity = "0.5")
         running = false;
+        
     }
     else if(!options.includes("")){
         statusText.textContent = `Draw!`;
@@ -76,7 +80,6 @@ function restartGame(){
     options = ["", "", "", "", "", "", "", "", ""];
     statusText.textContent = `${currentPlayer}'s turn`;
     cells.forEach(cell => cell.textContent = "");
+    document.querySelectorAll(".cell").forEach(cell => cell.style.opacity = "1")
     running = true;
 }
-
-
