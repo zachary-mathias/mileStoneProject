@@ -1,0 +1,105 @@
+// SCSS Variables
+$primary-color: yellow;
+$secondary-color: black;
+
+// SCSS Mixins
+@mixin button-styles {
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+  box-shadow: 0 0 0 2px;
+  line-height: 155px;
+  font-size: 190px;
+  cursor: pointer;
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+@mixin animation-bouncy {
+  animation: bouncy 3s infinite linear;
+  position: relative;
+  cursor: pointer;
+  background-color: $secondary-color;
+  color: white;
+}
+
+// SCSS Functions
+@function calculate-width($width, $padding) {
+  @return $width + (2 * $padding);
+}
+
+@function gradient-background($color1, $color2) {
+  @return linear-gradient($color1, $color2);
+}
+
+// SCSS Flow Control Directives
+$theme: light;
+
+body {
+  background-image: gradient-background(red, yellow);
+}
+
+@if $theme == dark {
+  body {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+} @else {
+  body {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+}
+
+// SCSS Nested Selectors
+.cell {
+  @include button-styles;
+}
+
+#gameContainer {
+  font-family: cursive;
+  text-align: center;
+}
+
+#cellContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 600px;
+  margin: auto;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: bg-animation 10s infinite;
+}
+
+@keyframes bg-animation {
+  0%, 100% {
+    background-color: red;
+  }
+  15% {
+    background-color: yellow;
+  }
+  30% {
+    background-color: green;
+  }
+  45% {
+    background-color: blue;
+  }
+  60% {
+    background-color: purple;
+  }
+  75% {
+    background-color: pink;
+  }
+  90% {
+    background-color: brown;
+  }
+}
+
+// SCSS Error Handling Directive
+@debug 'This is a debug message.';

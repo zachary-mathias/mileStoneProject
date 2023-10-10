@@ -1,0 +1,51 @@
+body {
+  background-image: linear-gradient(red, yellow); }
+
+body {
+  background-color: yellow;
+  color: black; }
+
+.cell {
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+  box-shadow: 0 0 0 2px;
+  line-height: 155px;
+  font-size: 190px;
+  cursor: pointer;
+  background-color: black;
+  color: yellow; }
+
+#gameContainer {
+  font-family: cursive;
+  text-align: center; }
+
+#cellContainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: 600px;
+  margin: auto; }
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: bg-animation 10s infinite; }
+
+@keyframes bg-animation {
+  0%, 100% {
+    background-color: red; }
+  15% {
+    background-color: yellow; }
+  30% {
+    background-color: green; }
+  45% {
+    background-color: blue; }
+  60% {
+    background-color: purple; }
+  75% {
+    background-color: pink; }
+  90% {
+    background-color: brown; } }
